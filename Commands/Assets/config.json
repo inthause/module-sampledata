@@ -1,0 +1,30 @@
+{
+    "project_sampledata:import-products": {
+        "description": "Import JSON products file",
+        "options":{
+            "webStoreId": {
+                "description": "default webStore id",
+                "default": 0
+            },
+            "billingAreaId": {
+                "description": "default billing area id",
+                "default": 0
+            },
+            "groupAttributeId": {
+                "description": "default group attribute id",
+                "default": 0
+            },
+            "websiteId": {
+                "description": "default website id",
+                "default": 0
+            }
+        },
+        "arguments":{
+            "filePath": {
+                "description": "path of file",
+                "required": true,
+                "default": null
+            }
+        }
+    }
+}

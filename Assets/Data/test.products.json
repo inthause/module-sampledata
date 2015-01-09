@@ -1,0 +1,88 @@
+[
+	{
+		"_id": "TAECH_2285",
+		"LCID": {
+			"fr_FR": {
+				"title": "Gilet Bleu Turquoise",
+				"description": "Cardigan \u00e0 capuche en coton et cachemire. Coudi\u00e8res et empi\u00e8cements constrastants. Fermeture zipp\u00e9e devant. \n**Composition : **92% coton 8% cachemire\n**Conseils d'entretien: **Lavage 30\u00b0C cycle d\u00e9licat\nRef : TE18121"
+			}
+		},
+		"brand_id": "tartine-et-chocolat",
+		"visuals_id": [
+			"http:\/\/media.achatvip.com\/produits\/tartine-et-chocolat\/TAECH_2285_BLEU44\/sz1.jpg"
+		],
+		"publicationStatus": "PUBLISHABLE",
+		"variantGroup": {
+			"rootProduct_id": "TAECH_2285",
+			"axesAttributes_id": [
+				"color",
+				"size"
+			]
+		}
+	},
+	{
+		"_id": "TAECH_2285_BLEU44-3A",
+		"LCID": {
+			"fr_FR": {
+				"title": "Gilet Bleu Turquoise",
+				"attributeValues": [
+					{
+						"attribute_id": "color",
+						"value": "Bleu Turquoise"
+					},
+					{
+						"attribute_id": "size",
+						"value": "3A"
+					}
+				]
+			}
+		},
+		"visuals_id": [
+			"http:\/\/media.achatvip.com\/produits\/tartine-et-chocolat\/TAECH_2285_BLEU44\/sz1.jpg"
+		],
+		"publicationStatus": "PUBLISHABLE",
+		"variantGroup": {"rootProduct_id": "TAECH_2285"},
+		"sku": {
+			"code": "TAECH_2285_BLEU44-3A",
+			"ean13": "3607020646910",
+			"partNumber": "TE18121|44|3A",
+			"unit": "PC",
+			"unlimitedInventory": false,
+			"allowQuantitySplit": false,
+			"allowBackorders": false,
+			"quantityIncrement": 1,
+			"minQuantity": 1,
+			"maxQuantity": null,
+			"physicalProperties": {
+				"mass": {
+					"value": 0,
+					"unit": "g"
+				},
+				"length": {
+					"value": 0,
+					"unit": "cm"
+				},
+				"width": {
+					"value": 0,
+					"unit": "cm"
+				},
+				"height": {
+					"value": 0,
+					"unit": "cm"
+				}
+			},
+			"prices": [
+				{
+					"startActivation": "2009-12-31T23:00:00Z",
+					"taxCategories": {"TVAFR": "N"},
+					"value": 75,
+					"discountDetail": null,
+					"ecoTax": null,
+					"endActivation": null,
+					"basePriceValue": null,
+					"options": null
+				}
+			]
+		}
+	}
+]
