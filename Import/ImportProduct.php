@@ -765,14 +765,36 @@ class ImportProduct
 		return $price;
 	}
 
-
 	/**
 	 * @param string $visualUrl
 	 * @return \Rbs\Media\Documents\Image|null
 	 */
 	protected function importVisual($visualUrl)
 	{
-		$path = parse_url($visualUrl, PHP_URL_PATH);
+		$path = @parse_url($visualUrl, PHP_URL_PATH);
+		if ($path === false) {
+			return null;
+		}
+		$storageManager = $this->getStorageManager();
+
+		$normalizedPath = $storageManager->getStorageByName('images')->normalizePath($path);
+		$changeURI = $this->getStorageManager()->buildChangeURI('images', '/' .$normalizedPath)
+			->normalize()->toString();
+
+		$itemInfo = $this->getStorageManager()->getItemInfo($changeURI);
+		if ($itemInfo === null || !$itemInfo->isFile())
+		{
+			$data = @file_get_contents($visualUrl);
+			if ($data === false)
+			{
+				return null;
+			}
+			file_put_contents($changeURI, $data);
+		}
+		else
+		{
+			@touch($changeURI);
+		}
 
 		/** @var $image \Rbs\Media\Documents\Image */
 		$image = $this->getDocumentsResolver()->getImage($path);
@@ -780,27 +802,13 @@ class ImportProduct
 		{
 			$image = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Media_Image');
 			$image->setLabel($path);
-			$data = @file_get_contents($visualUrl);
-			if ($data !== false)
+			$image->setPath($changeURI);
+			if ($this->saveDocument($image))
 			{
-				$changeURI = 'change://images' . $path;
-				file_put_contents($changeURI, $data);
-				$image->setPath($changeURI);
-				if ($this->saveDocument($image))
-				{
-					$this->getDocumentCodeManager()->addDocumentCode($image, $path, $this->contextId);
-					return $image;
-				}
+				$this->getDocumentCodeManager()->addDocumentCode($image, $path, $this->contextId);
+				return $image;
 			}
-			$image = null;
-		}
-		else
-		{
-			$itemInfo = $this->getStorageManager()->getItemInfo($image->getPath());
-			if ($itemInfo && $itemInfo->isFile())
-			{
-				@touch($image->getPath());
-			}
+			return null;
 		}
 		return $image;
 	}
