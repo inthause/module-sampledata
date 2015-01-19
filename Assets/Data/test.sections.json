@@ -1,0 +1,57 @@
+[
+	{
+		"_id": "Homme",
+		"LCID": {
+			"fr_FR": {
+				"title": "Homme"
+			}
+		},
+		"publicationStatus": "PUBLISHABLE",
+		"facets": [
+			{
+				"_id": "color",
+				"LCID": {
+					"fr_FR": {
+						"title": "Couleur"
+					}
+				}
+			},
+			{
+				"_id": "size",
+				"LCID": {
+					"fr_FR": {
+						"title": "Taille"
+					}
+				}
+			}
+		]
+	},
+	{
+		"_id": "Pantalons",
+		"LCID": {
+			"fr_FR": {
+				"title": "Pantalons"
+			}
+		},
+		"sectionParent_id": "Homme",
+		"publicationStatus": "PUBLISHABLE",
+		"facets": [
+			{
+				"_id": "color",
+				"LCID": {
+					"fr_FR": {
+						"title": "Couleur"
+					}
+				}
+			},
+			{
+				"_id": "size",
+				"LCID": {
+					"fr_FR": {
+						"title": "Taille"
+					}
+				}
+			}
+		]
+	}
+]

@@ -6,7 +6,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-namespace Project\Sampledata\Commands;
+namespace Rbs\Sampledata\Commands;
 
 use Change\Commands\Events\Event;
 use Zend\EventManager\EventManagerInterface;
@@ -14,7 +14,7 @@ use Zend\EventManager\ListenerAggregateInterface;
 use Zend\Json\Json;
 
 /**
- * @name \Project\Sampledata\Commands\Listeners
+ * @name \Rbs\Sampledata\Commands\Listeners
  */
 class Listeners implements ListenerAggregateInterface
 {
@@ -37,9 +37,9 @@ class Listeners implements ListenerAggregateInterface
 
 		$callback = function ($event)
 		{
-			(new \Project\Sampledata\Commands\ImportProducts())->execute($event);
+			(new \Rbs\Sampledata\Commands\ImportProducts())->execute($event);
 		};
-		$events->attach('project_sampledata:import-products', $callback);
+		$events->attach('rbs_sampledata:import-products', $callback);
 	}
 
 	/**

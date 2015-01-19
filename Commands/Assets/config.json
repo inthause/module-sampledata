@@ -1,5 +1,5 @@
 {
-    "project_sampledata:import-products": {
+    "rbs_sampledata:import-products": {
         "description": "Import JSON products file",
         "options":{
             "webStoreId": {

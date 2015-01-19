@@ -6,10 +6,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-namespace Project\Sampledata\Setup;
+namespace Rbs\Sampledata\Setup;
 
 /**
- * @name \Project\Sampledata\Setup\Install
+ * @name \Rbs\Sampledata\Setup\Install
  */
 class Install extends \Change\Plugins\InstallBase
 {
@@ -21,6 +21,6 @@ class Install extends \Change\Plugins\InstallBase
 	 */
 	public function executeApplication($plugin, $application, $configuration)
 	{
-		$configuration->addPersistentEntry('Change/Events/Commands/Project_Sampledata', '\Project\Sampledata\Commands\Listeners');
+		$configuration->addPersistentEntry('Change/Events/Commands/Rbs_Sampledata', '\Rbs\Sampledata\Commands\Listeners');
 	}
 }

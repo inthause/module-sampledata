@@ -6,10 +6,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-namespace Project\Sampledata\Commands;
+namespace Rbs\Sampledata\Commands;
 
 /**
-* @name \Project\Sampledata\Commands\ImportProducts
+* @name \Rbs\Sampledata\Commands\ImportProducts
 */
 class ImportProducts
 {
@@ -54,7 +54,7 @@ class ImportProducts
 		/** @var \Rbs\Commerce\CommerceServices $commerceServices */
 		$commerceServices = $event->getServices('commerceServices');
 
-		$importer = new \Project\Sampledata\Import\ImportProduct();
+		$importer = new \Rbs\Sampledata\Import\ImportProduct();
 		$importer->setDocumentManager($documentManager)
 			->setModelManager($applicationServices->getModelManager())
 			->setDocumentCodeManager($applicationServices->getDocumentCodeManager())

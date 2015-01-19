@@ -6,10 +6,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-namespace Project\Sampledata\Import;
+namespace Rbs\Sampledata\Import;
 
 /**
-* @name \Project\Sampledata\Import\ImportProduct
+* @name \Rbs\Sampledata\Import\ImportProduct
 */
 class ImportProduct
 {
@@ -36,7 +36,7 @@ class ImportProduct
 	/**
 	 * @var string
 	 */
-	protected $contextId = 'Project_Sampledata';
+	protected $contextId = 'Rbs_Sampledata';
 
 	/**
 	 * @var \Change\Documents\DocumentManager
@@ -69,7 +69,7 @@ class ImportProduct
 	protected $documentCodeManager;
 
 	/**
-	 * @var \Project\Sampledata\Import\DocumentsResolver
+	 * @var \Rbs\Sampledata\Import\DocumentsResolver
 	 */
 	protected $documentsResolver;
 
@@ -254,19 +254,19 @@ class ImportProduct
 	}
 
 	/**
-	 * @return \Project\Sampledata\Import\DocumentsResolver
+	 * @return \Rbs\Sampledata\Import\DocumentsResolver
 	 */
 	public function getDocumentsResolver()
 	{
 		if (!$this->documentsResolver)
 		{
-			$this->documentsResolver = new \Project\Sampledata\Import\DocumentsResolver($this->documentManager, $this->documentCodeManager, $this->contextId);
+			$this->documentsResolver = new \Rbs\Sampledata\Import\DocumentsResolver($this->documentManager, $this->documentCodeManager, $this->contextId);
 		}
 		return $this->documentsResolver;
 	}
 
 	/**
-	 * @param \Project\Sampledata\Import\DocumentsResolver $documentsResolver
+	 * @param \Rbs\Sampledata\Import\DocumentsResolver $documentsResolver
 	 * @return $this
 	 */
 	public function setDocumentsResolver($documentsResolver)

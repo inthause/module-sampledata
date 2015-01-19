@@ -5,10 +5,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-namespace Project\Sampledata\Import;
+namespace Rbs\Sampledata\Import;
 
 /**
- * @name \Project\Sampledata\Import\DocumentsResolver
+ * @name \Rbs\Sampledata\Import\DocumentsResolver
  */
 class DocumentsResolver
 {
@@ -45,7 +45,7 @@ class DocumentsResolver
 	 * @param string $contextId
 	 */
 	public function __construct(\Change\Documents\DocumentManager $documentManager,
-		\Change\Documents\DocumentCodeManager $documentCodeManager, $contextId = 'Project_Sampledata')
+		\Change\Documents\DocumentCodeManager $documentCodeManager, $contextId = 'Rbs_Sampledata')
 	{
 		$this->documentManager = $documentManager;
 		$this->documentCodeManager = $documentCodeManager;
