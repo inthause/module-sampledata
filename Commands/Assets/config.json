@@ -1,21 +1,42 @@
 {
+    "rbs_sampledata:set-defaults": {
+        "description": "set default documents",
+        "options":{
+            "webStore": {
+                "description": "default webStore",
+                "default": 0
+            },
+            "billingArea": {
+                "description": "default billing area",
+                "default": 0
+            },
+            "groupAttribute": {
+                "description": "default group attribute",
+                "default": 0
+            },
+            "section": {
+                "description": "default section",
+                "default": 0
+            }
+        }
+    },
     "rbs_sampledata:import-products": {
         "description": "Import JSON products file",
         "options":{
             "webStoreId": {
-                "description": "default webStore id",
+                "description": "webStore id",
                 "default": 0
             },
             "billingAreaId": {
-                "description": "default billing area id",
+                "description": "billing area id",
                 "default": 0
             },
             "groupAttributeId": {
-                "description": "default group attribute id",
+                "description": "group attribute id",
                 "default": 0
             },
-            "websiteId": {
-                "description": "default website id",
+            "sectionId": {
+                "description": "section id",
                 "default": 0
             }
         },
@@ -26,5 +47,25 @@
                 "default": null
             }
         }
-    }
+    },
+	"rbs_sampledata:import-sections": {
+		"description": "Import JSON sections file",
+		"options":{
+			"sectionId": {
+				"description": "section id",
+				"default": 0
+			},
+			"indexPageId": {
+				"description": "default index page id",
+				"default": 0
+			}
+		},
+		"arguments":{
+			"filePath": {
+				"description": "path of file",
+				"required": true,
+				"default": null
+			}
+		}
+	}
 }

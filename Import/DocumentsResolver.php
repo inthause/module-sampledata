@@ -37,6 +37,7 @@ class DocumentsResolver
 		'webStores' => [],
 		'billingAreas' => [],
 		'targets' => [],
+		'sections' => [],
 	];
 
 	/**
@@ -84,6 +85,32 @@ class DocumentsResolver
 				if ($document instanceof \Rbs\Catalog\Documents\Product)
 				{
 					$this->documentCodesIds['products'][$code] = $document->getId();
+					return $document;
+				}
+			}
+		}
+		return null;
+	}
+
+
+	/**
+	 * @param array|string $data
+	 * @return \Rbs\Website\Documents\Section|null
+	 */
+	public function getSection($data)
+	{
+		$code = $this->extractCode($data, 'code');
+		if ($code)
+		{
+			if (isset($this->documentCodesIds['sections'][$code]))
+			{
+				return $this->documentManager->getDocumentInstance($this->documentCodesIds['sections'][$code]);
+			}
+			foreach ($this->documentCodeManager->getDocumentsByCode($code, $this->contextId) as $document)
+			{
+				if ($document instanceof \Rbs\Website\Documents\Section)
+				{
+					$this->documentCodesIds['sections'][$code] = $document->getId();
 					return $document;
 				}
 			}

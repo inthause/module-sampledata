@@ -14,9 +14,9 @@ namespace Rbs\Sampledata\Import;
 class ImportProduct
 {
 	/**
-	 * @var \Rbs\Website\Documents\Website
+	 * @var \Rbs\Website\Documents\Section
 	 */
-	protected $defaultWebsite;
+	protected $defaultSection;
 
 	/**
 	 * @var \Rbs\Store\Documents\WebStore
@@ -64,6 +64,11 @@ class ImportProduct
 	protected $attributeManager;
 
 	/**
+	 * @var \Rbs\Stock\StockManager
+	 */
+	protected $stockManager;
+
+	/**
 	 * @var \Change\Documents\DocumentCodeManager
 	 */
 	protected $documentCodeManager;
@@ -74,20 +79,38 @@ class ImportProduct
 	protected $documentsResolver;
 
 	/**
-	 * @return \Rbs\Website\Documents\Website
+	 * @return string
 	 */
-	public function getDefaultWebsite()
+	public function getContextId()
 	{
-		return $this->defaultWebsite;
+		return $this->contextId;
 	}
 
 	/**
-	 * @param \Rbs\Website\Documents\Website $defaultWebsite
+	 * @param string $contextId
 	 * @return $this
 	 */
-	public function setDefaultWebsite($defaultWebsite)
+	public function setContextId($contextId)
 	{
-		$this->defaultWebsite = $defaultWebsite;
+		$this->contextId = $contextId;
+		return $this;
+	}
+
+	/**
+	 * @return \Rbs\Website\Documents\Section
+	 */
+	public function getDefaultSection()
+	{
+		return $this->defaultSection;
+	}
+
+	/**
+	 * @param \Rbs\Website\Documents\Section $defaultSection
+	 * @return $this
+	 */
+	public function setDefaultSection($defaultSection)
+	{
+		$this->defaultSection = $defaultSection;
 		return $this;
 	}
 
@@ -236,6 +259,24 @@ class ImportProduct
 	}
 
 	/**
+	 * @return \Rbs\Stock\StockManager
+	 */
+	public function getStockManager()
+	{
+		return $this->stockManager;
+	}
+
+	/**
+	 * @param \Rbs\Stock\StockManager $stockManager
+	 * @return $this
+	 */
+	public function setStockManager($stockManager)
+	{
+		$this->stockManager = $stockManager;
+		return $this;
+	}
+
+	/**
 	 * @return \Change\Documents\DocumentCodeManager
 	 */
 	public function getDocumentCodeManager()
@@ -312,6 +353,7 @@ class ImportProduct
 				}
 			}
 			$product->setSku($sku);
+
 			foreach ($validData['LCID'] as $LCID => $productLocalizedData)
 			{
 				try
@@ -319,6 +361,24 @@ class ImportProduct
 					$this->getDocumentManager()->pushLCID($LCID);
 					if ($validData['refLCID'] == $LCID)
 					{
+						if (isset($validData['group']) && isset($validData['category']))
+						{
+							$sectionCode = $validData['group'] . '_' . $validData['category'];
+							$section = $this->getDocumentsResolver()->getSection($sectionCode);
+							if ($section)
+							{
+								$product->setPublicationSections([$section]);
+							}
+							else
+							{
+								echo 'Invalid publication section: ', $sectionCode, ' on product: ', $code, PHP_EOL;
+							}
+						}
+						else
+						{
+							$product->setPublicationSections([]);
+						}
+
 						if (!$this->saveProduct($product, $validData, $productLocalizedData))
 						{
 							$this->getDocumentManager()->popLCID();
@@ -346,7 +406,6 @@ class ImportProduct
 				$this->getDocumentCodeManager()->addDocumentCode($product, $code, $this->contextId);
 				$this->publishProduct($product, 'PUBLISHABLE');
 			}
-
 			return $product;
 		}
 		return null;
@@ -478,6 +537,19 @@ class ImportProduct
 		else
 		{
 			$product->setVariant(false);
+		}
+
+		$section = $this->defaultSection;
+		if ($section)
+		{
+			if (!$product->getVariant())
+			{
+				$product->getPublicationSections()->add($section);
+			}
+			else
+			{
+				$product->setPublicationSections([]);
+			}
 		}
 
 		if (!$product->getAttribute() || !$product->getVariant(false))
@@ -646,6 +718,39 @@ class ImportProduct
 
 		if ($this->saveDocument($sku))
 		{
+			if (isset($skuData['level']))
+			{
+				$level = intval($skuData['level']);
+				if ($level < 0)
+				{
+					$level = 0;
+				}
+				elseif ($level > \Rbs\Stock\StockManager::UNLIMITED_LEVEL)
+				{
+					$level = \Rbs\Stock\StockManager::UNLIMITED_LEVEL;
+				}
+			}
+			else
+			{
+				$level = 100;
+			}
+
+			$inventoryEntry = $this->getStockManager()->getInventoryEntry($sku, $this->getDefaultWebStore()->getWarehouseId());
+			if (!$inventoryEntry)
+			{
+				/** @var $inventoryEntry \Rbs\Stock\Documents\InventoryEntry */
+				$inventoryEntry = $this->getDocumentManager()->getNewDocumentInstanceByModelName('Rbs_Stock_InventoryEntry');
+				$inventoryEntry->setLevel($level);
+				$inventoryEntry->setSku($sku);
+				$inventoryEntry->setWarehouse($this->getDefaultWebStore()->getWarehouseIdInstance());
+				$inventoryEntry->save();
+			}
+			elseif ($inventoryEntry->getLevel() != $level)
+			{
+				$inventoryEntry->setLevel($level);
+				$inventoryEntry->save();
+			}
+
 			if (isset($skuData['prices']) && is_array($skuData['prices']))
 			{
 				$prices = [];
@@ -778,6 +883,11 @@ class ImportProduct
 		$storageManager = $this->getStorageManager();
 
 		$normalizedPath = $storageManager->getStorageByName('images')->normalizePath($path);
+		if (strpos($normalizedPath, 'images/') === 0)
+		{
+			$normalizedPath = substr($normalizedPath, 7);
+		}
+
 		$changeURI = $this->getStorageManager()->buildChangeURI('images', '/' .$normalizedPath)
 			->normalize()->toString();
 

@@ -37,9 +37,21 @@ class Listeners implements ListenerAggregateInterface
 
 		$callback = function ($event)
 		{
+			(new \Rbs\Sampledata\Commands\SetDefaults())->execute($event);
+		};
+		$events->attach('rbs_sampledata:set-defaults', $callback);
+
+		$callback = function ($event)
+		{
 			(new \Rbs\Sampledata\Commands\ImportProducts())->execute($event);
 		};
 		$events->attach('rbs_sampledata:import-products', $callback);
+
+		$callback = function ($event)
+		{
+			(new \Rbs\Sampledata\Commands\ImportSections())->execute($event);
+		};
+		$events->attach('rbs_sampledata:import-sections', $callback);
 	}
 
 	/**
