@@ -1,0 +1,562 @@
+{
+	"watches": {
+		"title": "Montres",
+		"categories": {
+			"WATCH": {
+				"title": "Montres",
+				"count": 62
+			},
+			"TOOLS": {
+				"title": "Accessoire",
+				"count": 10
+			},
+			"FINEOTHER": {
+				"title": "FINEOTHER",
+				"count": 1,
+				"mergedIn": "TOOLS"
+			},
+			"FASHIONOTHER": {
+				"title": "FASHIONOTHER",
+				"count": 1,
+				"mergedIn": "TOOLS"
+			},
+			"PHONE_ACCESSORY": {
+				"title": "PHONE_ACCESSORY",
+				"count": 2,
+				"mergedIn": "TOOLS"
+			},
+			"SPORTING_GOODS": {
+				"title": "SPORTING_GOODS",
+				"count": 3,
+				"mergedIn": "TOOLS"
+			},
+			"HOME_FURNITURE_AND_DECOR": {
+				"title": "HOME_FURNITURE_AND_DECOR",
+				"count": 3,
+				"mergedIn": "TOOLS"
+			},
+			"JEWELRY": {
+				"title": "JEWELRY",
+				"count": 1,
+				"mergedIn": "TOOLS"
+			},
+			"CONSUMER_ELECTRONICS": {
+				"title": "CONSUMER_ELECTRONICS",
+				"count": 5,
+				"mergedIn": "TOOLS"
+			},
+			"CE_ACCESSORY": {
+				"title": "CE_ACCESSORY",
+				"count": 2,
+				"mergedIn": "TOOLS"
+			},
+			"HEALTH_PERSONAL_CARE": {
+				"title": "HEALTH_PERSONAL_CARE",
+				"count": 1,
+				"mergedIn": "TOOLS"
+			},
+			"ACCESSORY": {
+				"title": "ACCESSORY",
+				"count": 1,
+				"mergedIn": "TOOLS"
+			}
+		}
+	},
+	"toys": {
+		"title": "Jouets",
+		"categories": {
+			"TOYS_AND_GAMES": {
+				"title": "Jeux et jouet",
+				"count": 90
+			},
+			"BABY_PRODUCT": {
+				"title": "Bébé",
+				"count": 2
+			},
+			"HOBBIES": {
+				"title": "Divers",
+				"count": 1
+			},
+			"SPORTING_GOODS": {
+				"title": "SPORTING_GOODS",
+				"count": 1,
+				"mergedIn": "HOBBIES"
+			},
+			"OFFICE_PRODUCTS": {
+				"title": "OFFICE_PRODUCTS",
+				"count": 2,
+				"mergedIn": "HOBBIES"
+			},
+			"LUGGAGE": {
+				"title": "LUGGAGE",
+				"count": 1,
+				"mergedIn": "HOBBIES"
+			},
+			"CONSOLE_VIDEO_GAMES": {
+				"title": "Jeux vidéo",
+				"count": 1
+			},
+			"HEALTH_PERSONAL_CARE": {
+				"title": "HEALTH_PERSONAL_CARE",
+				"count": 1,
+				"mergedIn": "HOBBIES"
+			},
+			"HOME": {
+				"title": "HOME",
+				"count": 1,
+				"mergedIn": "HOBBIES"
+			}
+		}
+	},
+	"shoes": {
+		"title": "Chaussures",
+		"categories": {
+			"SHOES": {
+				"title": "Chaussure",
+				"count": 44
+			},
+			"BAG": {
+				"title": "Sac",
+				"count": 23
+			},
+			"LUGGAGE": {
+				"title": "Bagage",
+				"count": 15
+			},
+			"HANDBAG": {
+				"title": "Sac à main",
+				"count": 3
+			},
+			"ACCESSORY": {
+				"title": "Accessoire",
+				"count": 3
+			}
+		}
+	},
+	"luggage": {
+		"title": "Bagagerie",
+		"categories": {
+			"LUGGAGE": {
+				"title": "Bagage",
+				"count": 18
+			},
+			"BAG": {
+				"title": "Sac",
+				"count": 1
+			},
+			"CAMERA_BAGS_AND_CASES": {
+				"title": "CAMERA_BAGS_AND_CASES",
+				"count": 18,
+				"mergedIn": "BAG"
+			},
+			"CARRYING_CASE_OR_BAG": {
+				"title": "CARRYING_CASE_OR_BAG",
+				"count": 9,
+				"mergedIn": "BAG"
+			},
+			"CE_CARRYING_CASE_OR_BAG": {
+				"title": "CE_CARRYING_CASE_OR_BAG",
+				"count": 2,
+				"mergedIn": "BAG"
+			},
+			"HANDBAG": {
+				"title": "Sac à main",
+				"count": 1
+			}
+		}
+	},
+	"jewelry": {
+		"title": "Bijoux",
+		"categories": {
+			"FASHIONNECKLACEBRACELETANKLET": {
+				"title": "Colier et bracelet",
+				"count": 30
+			},
+			"JEWELRY": {
+				"title": "Bijoux",
+				"count": 8
+			},
+			"FASHIONRING": {
+				"title": "FASHIONRING",
+				"count": 7,
+				"mergedIn": "JEWELRY"
+			},
+			"FASHIONOTHER": {
+				"title": "Accessoire",
+				"count": 30
+			},
+			"FINEOTHER": {
+				"title": "FINEOTHER",
+				"count": 3,
+				"mergedIn": "FASHIONOTHER"
+			},
+			"FASHIONEARRING": {
+				"title": "FASHIONEARRING",
+				"count": 4,
+				"mergedIn": "JEWELRY"
+			},
+			"FINENECKLACEBRACELETANKLET": {
+				"title": "FINENECKLACEBRACELETANKLET",
+				"count": 5,
+				"mergedIn": "FASHIONNECKLACEBRACELETANKLET"
+			}
+		}
+	},
+	"electronics": {
+		"title": "High-tech",
+		"categories": {
+			"COMPUTER_ADD_ON": {
+				"title": "Informatique",
+				"count": 17
+			},
+			"COMPUTER_COMPONENT": {
+				"title": "COMPUTER_COMPONENT",
+				"count": 28,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"CONSUMER_ELECTRONICS": {
+				"title": "Electronique",
+				"count": 25
+			},
+			"CONSUMER_ELECTRONICS_PARTS": {
+				"title": "CONSUMER_ELECTRONICS_PARTS",
+				"count": 3,
+				"mergedIn": "CONSUMER_ELECTRONICS"
+			},
+			"PHONE": {
+				"title": "Téléphone",
+				"count": 12
+			},
+			"MOTHERBOARD": {
+				"title": "MOTHERBOARD",
+				"count": 7,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"PHONE_ACCESSORY": {
+				"title": "PHONE_ACCESSORY",
+				"count": 16,
+				"mergedIn": "PHONE"
+			},
+			"MONITOR": {
+				"title": "MONITOR",
+				"count": 3,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"KEYBOARDS": {
+				"title": "KEYBOARDS",
+				"count": 1,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"SYSTEM_POWER_DEVICE": {
+				"title": "SYSTEM_POWER_DEVICE",
+				"count": 4
+			},
+			"COMPUTER_SPEAKER": {
+				"title": "COMPUTER_SPEAKER",
+				"count": 1,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"TOOLS": {
+				"title": "TOOLS",
+				"count": 1,
+				"mergedIn": "MISC_OTHER"
+			},
+			"OFFICE_PRODUCTS": {
+				"title": "OFFICE_PRODUCTS",
+				"count": 25
+			},
+			"COMPUTER_INPUT_DEVICE": {
+				"title": "COMPUTER_INPUT_DEVICE",
+				"count": 4,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"BATTERY": {
+				"title": "BATTERY",
+				"count": 11,
+				"mergedIn": "MISC_OTHER"
+			},
+			"CE_CARRYING_CASE_OR_BAG": {
+				"title": "CE_CARRYING_CASE_OR_BAG",
+				"count": 5,
+				"mergedIn": "MISC_OTHER"
+			},
+			"PERSONAL_COMPUTER": {
+				"title": "PERSONAL_COMPUTER",
+				"count": 4,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"NOTEBOOK_COMPUTER": {
+				"title": "NOTEBOOK_COMPUTER",
+				"count": 2,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"CAMERA_OTHER_ACCESSORIES": {
+				"title": "CAMERA_OTHER_ACCESSORIES",
+				"count": 4,
+				"mergedIn": "MISC_OTHER"
+			},
+			"PRINTER": {
+				"title": "PRINTER",
+				"count": 1,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"CE_ACCESSORY": {
+				"title": "CE_ACCESSORY",
+				"count": 4,
+				"mergedIn": "MISC_OTHER"
+			},
+			"COMPUTER_COOLING_DEVICE": {
+				"title": "COMPUTER_COOLING_DEVICE",
+				"count": 1,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"COMPUTER_DRIVE_OR_STORAGE": {
+				"title": "COMPUTER_DRIVE_OR_STORAGE",
+				"count": 7,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"NETWORKING_DEVICE": {
+				"title": "NETWORKING_DEVICE",
+				"count": 16,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"SOUND_CARD": {
+				"title": "SOUND_CARD",
+				"count": 3,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"COMPUTER": {
+				"title": "COMPUTER",
+				"count": 2,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"CAMERA_LENSES": {
+				"title": "CAMERA_LENSES",
+				"count": 5,
+				"mergedIn": "MISC_OTHER"
+			},
+			"GPS_OR_NAVIGATION_SYSTEM": {
+				"title": "GPS_OR_NAVIGATION_SYSTEM",
+				"count": 2,
+				"mergedIn": "MISC_OTHER"
+			},
+			"OFFICE_ELECTRONICS": {
+				"title": "OFFICE_ELECTRONICS",
+				"count": 1,
+				"mergedIn": "MISC_OTHER"
+			},
+			"MISC_OTHER": {
+				"title": "Divers",
+				"count": 2
+			},
+			"BABY_PRODUCT": {
+				"title": "BABY_PRODUCT",
+				"count": 1,
+				"mergedIn": "MISC_OTHER"
+			},
+			"RECEIVER_OR_AMPLIFIER": {
+				"title": "RECEIVER_OR_AMPLIFIER",
+				"count": 1,
+				"mergedIn": "MISC_OTHER"
+			},
+			"HEALTH_PERSONAL_CARE": {
+				"title": "HEALTH_PERSONAL_CARE",
+				"count": 6,
+				"mergedIn": "MISC_OTHER"
+			},
+			"CABLE_OR_ADAPTER": {
+				"title": "CABLE_OR_ADAPTER",
+				"count": 9,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"COMPUTER_PROCESSOR": {
+				"title": "COMPUTER_PROCESSOR",
+				"count": 1,
+				"mergedIn": "COMPUTER_ADD_ON"
+			},
+			"INK_OR_TONER": {
+				"title": "INK_OR_TONER",
+				"count": 5,
+				"mergedIn": "COMPUTER_ADD_ON"
+			}
+		}
+	},
+	"beauty": {
+		"title": "Beauté et soin",
+		"categories": {
+			"PERSONAL_CARE_APPLIANCE": {
+				"title": "Soin",
+				"count": 37
+			},
+			"BEAUTY": {
+				"title": "Beauté",
+				"count": 38
+			},
+			"HEALTH_PERSONAL_CARE": {
+				"title": "Hygiène et santé",
+				"count": 16
+			}
+		}
+	},
+	"baby": {
+		"title": "Bébé",
+		"categories": {
+			"BABY_PRODUCT": {
+				"title": "Puériculture",
+				"count": 61
+			},
+			"TOYS_AND_GAMES": {
+				"title": "Jouet",
+				"count": 18
+			},
+			"HEALTH_PERSONAL_CARE": {
+				"title": "Hygiène et santé",
+				"count": 18
+			}
+		}
+	},
+	"appliance": {
+		"title": "Electroménager",
+		"categories": {
+			"MICROWAVE_OVEN": {
+				"title": "Micro-onde",
+				"count": 8
+			},
+			"LAUNDRY_APPLIANCE": {
+				"title": "Lave-linge",
+				"count": 42
+			},
+			"DISHWASHER": {
+				"title": "Lave-vaisselle",
+				"count": 22
+			},
+			"HOME_FURNITURE_AND_DECOR": {
+				"title": "Décoration",
+				"count": 47
+			},
+			"HOME": {
+				"title": "Maison",
+				"count": 63
+			},
+			"APPLIANCE_ACCESSORY": {
+				"title": "Accessoire",
+				"count": 48
+			},
+			"REFRIGERATION_APPLIANCE": {
+				"title": "Réfrigérateur",
+				"count": 85
+			},
+			"HOME_LIGHTING_ACCESSORY": {
+				"title": "Eclairage",
+				"count": 4
+			},
+			"KITCHEN": {
+				"title": "Cuisine",
+				"count": 67
+			},
+			"VENT_HOOD": {
+				"title": "Hotte",
+				"count": 20
+			},
+			"TOOLS": {
+				"title": "Accessoire",
+				"count": 4
+			},
+			"ABIS_KITCHEN": {
+				"title": "ABIS_KITCHEN",
+				"count": 1,
+				"mergedIn": "KITCHEN"
+			},
+			"PLUMBING_FIXTURE": {
+				"title": "PLUMBING_FIXTURE",
+				"count": 1,
+				"mergedIn": "TOOLS"
+			},
+			"TRASH_COMPACTOR": {
+				"title": "TRASH_COMPACTOR",
+				"count": 6,
+				"mergedIn": "KITCHEN"
+			},
+			"COOKING_OVEN": {
+				"title": "COOKING_OVEN",
+				"count": 12,
+				"mergedIn": "KITCHEN"
+			},
+			"LIGHT_SOURCE": {
+				"title": "LIGHT_SOURCE",
+				"count": 4,
+				"mergedIn": "HOME_LIGHTING_ACCESSORY"
+			},
+			"COOKTOP": {
+				"title": "COOKTOP",
+				"count": 16,
+				"mergedIn": "KITCHEN"
+			}
+		}
+	},
+	"apparel": {
+		"title": "Habillement",
+		"categories": {
+			"SHIRT": {
+				"title": "Chemise",
+				"count": 28
+			},
+			"OUTERWEAR": {
+				"title": "OUTERWEAR",
+				"count": 7,
+				"mergedIn": "SUIT"
+			},
+			"SPORTING_GOODS": {
+				"title": "Sport",
+				"count": 7
+			},
+			"DRESS": {
+				"title": "Robe",
+				"count": 6
+			},
+			"SWEATER": {
+				"title": "Pull-over",
+				"count": 10
+			},
+			"ACCESSORY": {
+				"title": "Accessoire",
+				"count": 13
+			},
+			"PANTS": {
+				"title": "Pantalon",
+				"count": 10
+			},
+			"SLEEPWEAR": {
+				"title": "Nuit",
+				"count": 4
+			},
+			"SOCKSHOSIERY": {
+				"title": "Chaussette",
+				"count": 5
+			},
+			"BLAZER": {
+				"title": "BLAZER",
+				"count": 3,
+				"mergedIn": "SUIT"
+			},
+			"SUIT": {
+				"title": "Veste",
+				"count": 2
+			},
+			"BRA": {
+				"title": "BRA",
+				"count": 1,
+				"mergedIn": "UNDERWEAR"
+			},
+			"UNDERWEAR": {
+				"title": "Sous-vêtement",
+				"count": 3
+			},
+			"HAT": {
+				"title": "HAT",
+				"count": 1,
+				"mergedIn": "ACCESSORY"
+			}
+		}
+	}
+}
